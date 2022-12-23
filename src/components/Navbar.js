@@ -8,7 +8,7 @@ export default class navbar extends Component {
                 <div className='container-fluid'>
                     <Link className="navbar-brand " to="/">
                         <img src={logo} alt="Logo" className="d-inline-block align-text-top" width="30" height="24" />
-                        NewsArc
+                            NewsArc
                     </Link>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
