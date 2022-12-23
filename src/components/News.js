@@ -52,7 +52,7 @@ export class news extends Component {
     }
     async componentDidMount() {
         this.update()
-        this.setState({ page: this.state.page + 1, })
+        this.setState({ page:this.state.page + 1, })
     }
     fetchMoreData = async () => {
         this.setState({ page: this.state.page + 1, })
@@ -66,27 +66,27 @@ export class news extends Component {
             loading: false,
 
         })
-
+        
     };
     render() {
 
         return (
             <div className='container-fluid'>
-
+                
                 <h1 className="text-center my-4">Top Headlines From {this.capitalizeFirstLetter(this.props.category)} </h1>
-
+             
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMoreData}
-                    hasMore={this.state.articles.length !== this.state.totalResults}
-                    loader={<Spinner />}
+                    hasMore={this.state.articles.length!==this.state.totalResults}
+                    loader={<Spinner/>}
                 >    <div className="container-fluid">
                         <div className='row' >
                             {this.state.articles.map((element) => {
                                 return <div className="col-md-3 dx'1" key={element.url}>
                                     <NewsItem title={element.title ? element.title.slice(0, 100) : ""} description={element.description ? element.description.slice(0, 100) : ""} imgUrl={element.urlToImage} newsUrl={element.url} source={element.source.name} dateAndTime={element.publishedAt} author={element.author} />
                                 </div>
-
+                                
                             })}
                         </div>
                     </div>
